@@ -38,3 +38,14 @@ This project is configured for automatic deployment to GitHub Pages using GitHub
 2. Under "Source", select "GitHub Actions"
 3. The workflow will automatically deploy on pushes to the `main` branch
 4. Your site will be published at `https://<your-github-username>.github.io/<repository-name>/`
+
+
+# Code Smells Found
+1. Duplicated code - Updating the counter text, page title, background color was copy pasted in each handler --> risks code changing procedures. 
+2. Mysterious Variable Names - c, a, b, h, bI didn't communicate intent. Clear names improve comprehension and reduce errors. 
+3. Global Data - C leaked state globally, making it hard to reason about modifcations. So I am encapsulating the variable. 
+
+### Changes Applied
+1. Extract Function - This removed all the duplications and made them into function applyStateToUI()
+2. Rename Variables - Now we have an idea what each varaible are. State, increment, decrement, reset, counterEL, headingText.
+3. Encapsulate variable - controls state object tto mutable state. 
